@@ -10,16 +10,20 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve("./dist"),
   },
-  module :{
-      rules : [
-          {test : /\.js$/,
-            exclude : /node_modules/,
-            loader : "babel-loader"
-        }
-      ]
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader"
+      }
+    ]
   },
-  devServer : {
-      port : 9000
+  devServer: {
+    https : true,
+    port: 9000,
+    disableHostCheck: true,
+    host: "0.0.0.0"
   },
   plugins: [
     new HtmlWebpackPlugin({
